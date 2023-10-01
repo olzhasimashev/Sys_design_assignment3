@@ -13,8 +13,6 @@
 
 # Dependency Graph Analysis with Neo4j
 
-This project demonstrates how to transfer a simplified dependency graph of components into a Neo4j graph database, and how to calculate stability metrics for each component.
-
 ## Prerequisites
 
 - Docker
@@ -36,7 +34,13 @@ This project demonstrates how to transfer a simplified dependency graph of compo
        neo4j
      ```
 
-3. **Install Required Python Libraries:**
+3. **Create virtual environment:**
+    - Execute the following command to create a virtual environment. Replace 'name_of_venv' with tour desired name:
+    ```bash
+     python -m venv name_of_venv
+     ```
+
+4. **Install Required Python Libraries:**
    - Execute the following command to install the required libraries:
      ```bash
      pip install neo4j pandas openpyxl
