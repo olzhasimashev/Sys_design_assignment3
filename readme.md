@@ -1,3 +1,16 @@
+# Group Members
+
+| No | Name              |
+|----|-------------------|
+| 1  | Kaliyev Alikhan   |
+| 2  | Kim Aleksandr     |
+| 3  | Zhumash Imangali  |
+| 4  | Imashev Olzhas    |
+| 5  | Akhmullaev Sultan |
+| 6  | Ayupov Zhandos    |
+| 7  | Tolkachev Dmitriy |
+| 8  | Ugai Artem        |
+
 # Dependency Graph Analysis with Neo4j
 
 This project demonstrates how to transfer a simplified dependency graph of components into a Neo4j graph database, and how to calculate stability metrics for each component.
@@ -53,7 +66,7 @@ This project demonstrates how to transfer a simplified dependency graph of compo
          tx.run("MATCH (a:Component {name: 'Notification Service'}), (b:Component {name: 'Tweet Service'}) CREATE (a)-[:DEPENDS_ON]->(b)")
 
      with driver.session() as session:
-         session.write_transaction(create_schema)
+         session.execute_write(create_schema)
      ```
    - Run `load_data.py` by executing:
      ```bash
@@ -82,7 +95,7 @@ This project demonstrates how to transfer a simplified dependency graph of compo
          return pd.DataFrame([dict(record) for record in result])
 
      with driver.session() as session:
-         metrics_df = session.read_transaction(calculate_metrics)
+         metrics_df = session.execute_write(calculate_metrics)
 
      # Calculate Instability
      metrics_df['I'] = metrics_df['Fan_out'] / (metrics_df['Fan_in'] + metrics_df['Fan_out'])
