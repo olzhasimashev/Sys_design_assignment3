@@ -35,7 +35,7 @@
      ```
 
 3. **Create virtual environment:**
-    - Execute the following command to create a virtual environment. Replace 'name_of_venv' with tour desired name:
+   - Execute the following command to create a virtual environment. Replace 'name_of_venv' with tour desired name:
      ```bash
      python -m venv name_of_venv
      ```
